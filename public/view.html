@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>View Rooms | HostelPro</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="brand">
+            <div class="brand-icon">H</div>
+            <span>IrshadHMS</span>
+        </div>
+
+        <p class="menu-heading">MAIN MENU</p>
+
+        <nav class="side-nav">
+
+            <a href="index.html" class="nav-link">
+                <span>▦</span> Dashboard
+            </a>
+
+            <a href="view.html" class="nav-link active">
+                <span>▤</span> Rooms
+            </a>
+
+            <a href="add.html" class="nav-link">
+                <span>＋</span> Add Room
+            </a>
+
+            <a href="search.html" class="nav-link">
+                <span>⌕</span> Search Room
+            </a>
+
+            <a href="update.html" class="nav-link">
+                <span>✎</span> Update Room
+            </a>
+
+            <a href="delete.html" class="nav-link">
+                <span>▣</span> Delete Room
+            </a>
+
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="profile-avatar">A</div>
+
+            <div>
+                <strong>Administrator</strong>
+                <small>Hostel Management</small>
+            </div>
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- TOP BAR -->
+        <header class="topbar">
+
+            <button type="button"
+                    id="menuToggle"
+                    class="menu-toggle"
+                    aria-label="Toggle navigation">
+                ☰
+            </button>
+
+            <div class="breadcrumb">
+                Dashboard / <strong>Rooms</strong>
+            </div>
+
+            <div class="admin-profile">
+                <div class="profile-avatar">A</div>
+                <span>Admin</span>
+            </div>
+
+        </header>
+
+
+        <!-- PAGE CONTENT -->
+        <section class="dashboard-content">
+
+            <div class="page-heading">
+
+                <div>
+                    <h1>Hostel Room Details</h1>
+                    <p>View and manage all registered hostel rooms.</p>
+                </div>
+
+                <div class="heading-actions">
+
+                    <a href="index.html" class="back-home-button">
+                        ← Dashboard
+                    </a>
+
+                    <a href="add.html" class="primary-button">
+                        + Add Room
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- ROOM TABLE -->
+            <section class="form-card rooms-table-card">
+
+                <div class="form-card-heading">
+                    <h2>All Hostel Rooms</h2>
+                    <p>Room details retrieved from your database.</p>
+                </div>
+
+                <div class="table-actions">
+                    <button
+                        type="button"
+                        id="refreshRooms"
+                        class="secondary-button">
+                        ↻ Refresh Rooms
+                    </button>
+                </div>
+
+                <p id="message" role="status" aria-live="polite"></p>
+
+                <div class="table-responsive">
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Room ID</th>
+                                <th>Room Number</th>
+                                <th>Block Name</th>
+                                <th>Capacity</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="roomTable">
+                            <tr>
+                                <td colspan="5">Loading rooms...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+
+            </section>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="script.js"></script>
+
+<script>
+    // Refresh the room list when the button is clicked.
+    document.getElementById("refreshRooms").addEventListener("click", function () {
+        if (typeof loadRooms === "function") {
+            loadRooms();
+        }
+    });
+</script>
+
+</body>
+</html>

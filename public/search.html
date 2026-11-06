@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Search Room | HostelPro</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="brand">
+            <div class="brand-icon">H</div>
+            <span>IrshadHMS</span>
+        </div>
+
+        <p class="menu-heading">MAIN MENU</p>
+
+        <nav class="side-nav">
+
+            <a href="index.html" class="nav-link">
+                <span>▦</span> Dashboard
+            </a>
+
+            <a href="view.html" class="nav-link">
+                <span>▤</span> Rooms
+            </a>
+
+            <a href="add.html" class="nav-link">
+                <span>＋</span> Add Room
+            </a>
+
+            <a href="search.html" class="nav-link active">
+                <span>⌕</span> Search Room
+            </a>
+
+            <a href="update.html" class="nav-link">
+                <span>✎</span> Update Room
+            </a>
+
+            <a href="delete.html" class="nav-link">
+                <span>▣</span> Delete Room
+            </a>
+
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="profile-avatar">A</div>
+
+            <div>
+                <strong>Administrator</strong>
+                <small>Hostel Management</small>
+            </div>
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- TOP BAR -->
+        <header class="topbar">
+
+            <button
+                type="button"
+                id="menuToggle"
+                class="menu-toggle"
+                aria-label="Toggle navigation">
+                ☰
+            </button>
+
+            <div class="breadcrumb">
+                Dashboard / <strong>Search Room</strong>
+            </div>
+
+            <div class="admin-profile">
+                <div class="profile-avatar">A</div>
+                <span>Admin</span>
+            </div>
+
+        </header>
+
+
+        <!-- PAGE CONTENT -->
+        <section class="dashboard-content">
+
+            <div class="page-heading">
+
+                <div>
+                    <h1>Search Hostel Room</h1>
+
+                    <p>
+                        Find room details using the unique Room ID.
+                    </p>
+                </div>
+
+                <a href="index.html" class="back-home-button">
+                    ← Back to Dashboard
+                </a>
+
+            </div>
+
+
+            <!-- SEARCH FORM -->
+            <section class="form-card">
+
+                <div class="form-card-heading">
+                    <h2>Find a Room</h2>
+
+                    <p>
+                        Enter a room ID to retrieve its details from the database.
+                    </p>
+                </div>
+
+                <form id="searchForm">
+
+                    <label for="searchId">Room ID</label>
+
+                    <input
+                        type="number"
+                        id="searchId"
+                        min="1"
+                        step="1"
+                        placeholder="Enter Room ID (e.g. 1)"
+                        required
+                    >
+
+                    <button type="submit" class="primary-button">
+                        ⌕ Search Room
+                    </button>
+
+                </form>
+
+                <p id="message" role="status" aria-live="polite"></p>
+
+                <!-- SEARCH RESULT -->
+                <div id="searchResult" class="search-result"></div>
+
+            </section>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HostelPro | Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app-layout">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar" id="sidebar">
+
+            <div class="brand">
+            <div class="brand-icon">I</div>
+            <span>Irshad<span class="brand-highlight"> HMS</span></span>
+            </div>
+
+            <p class="menu-heading">WORKSPACE</p>
+
+            <nav class="side-nav">
+
+               <a href="index.html" class="nav-link">
+                 <span>▦</span> Dashboard
+               </a>
+
+               <a href="add.html" class="nav-link active">
+                  <span>＋</span> Add Room
+               </a>
+                <a href="add.html" class="nav-link">
+                    <span>＋</span> Add Room
+                </a>
+
+                <a href="search.html" class="nav-link">
+                    <span>⌕</span> Search Room
+                </a>
+
+                <a href="update.html" class="nav-link">
+                    <span>✎</span> Update Room
+                </a>
+
+                <a href="delete.html" class="nav-link">
+                    <span>⌫</span> Delete Room
+                </a>
+
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="help-icon">?</div>
+
+                <div>
+                    <strong>Need help?</strong>
+                    <p>Manage your hostel easily.</p>
+                </div>
+            </div>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+            <!-- TOPBAR -->
+            <header class="topbar">
+
+                <button id="menuToggle" class="menu-toggle">
+                    ☰
+                </button>
+
+                <div class="breadcrumb">
+                    Workspace <span>/</span> Dashboard
+                </div>
+
+                <div class="admin-profile">
+                    <span class="online-dot"></span>
+                    Administrator
+
+                    <div class="profile-avatar">HP</div>
+                </div>
+
+            </header>
+
+
+            <!-- DASHBOARD -->
+            <section class="dashboard-content">
+
+                <div class="page-heading">
+
+                    <div>
+                        <p class="eyebrow">HOSTEL MANAGEMENT</p>
+
+                        <h1>Rooms Inventory</h1>
+
+                        <p class="subtitle">
+                            Manage room status, capacity, and availability at a glance.
+                        </p>
+                    </div>
+
+                    <a href="add.html" class="primary-button">
+                        ＋ Add Room
+                    </a>
+
+                </div>
+
+
+                <!-- STATISTICS CARDS -->
+                <section class="stats-grid">
+
+                    <article class="stat-card">
+                        <div class="stat-header">
+                            <span>TOTAL ROOMS</span>
+                            <div class="stat-icon icon-gray">▦</div>
+                        </div>
+
+                        <h2 id="totalRooms">0</h2>
+
+                        <p>Registered rooms</p>
+                    </article>
+
+
+                    <article class="stat-card">
+                        <div class="stat-header">
+                            <span class="purple-text">OCCUPIED</span>
+                            <div class="stat-icon icon-purple">♙</div>
+                        </div>
+
+                        <h2 id="occupiedRooms" class="purple-text">0</h2>
+
+                        <p>Currently occupied</p>
+                    </article>
+
+
+                    <article class="stat-card">
+                        <div class="stat-header">
+                            <span class="green-text">AVAILABLE</span>
+                            <div class="stat-icon icon-green">✓</div>
+                        </div>
+
+                        <h2 id="availableRooms" class="green-text">0</h2>
+
+                        <p>Ready for residents</p>
+                    </article>
+
+
+                    <article class="stat-card">
+                        <div class="stat-header">
+                            <span class="orange-text">MAINTENANCE</span>
+                            <div class="stat-icon icon-orange">⚒</div>
+                        </div>
+
+                        <h2 id="maintenanceRooms" class="orange-text">0</h2>
+
+                        <p>Needs attention</p>
+                    </article>
+
+                </section>
+
+
+                <!-- ROOM INVENTORY -->
+                <section class="rooms-section">
+
+                    <div class="section-heading">
+
+                        <div>
+                            <h2>Room Overview</h2>
+
+                            <p>
+                                Browse and manage your hostel rooms.
+                            </p>
+                        </div>
+
+                        <a href="view.html" class="view-all">
+                            View all rooms →
+                        </a>
+
+                    </div>
+
+
+                    <!-- SEARCH AND FILTERS -->
+                    <div class="toolbar">
+
+                        <input
+                            type="search"
+                            id="roomSearch"
+                            placeholder="Search room number or block..."
+                        >
+
+                        <div class="filter-buttons">
+
+                            <button
+                                class="filter-btn active"
+                                data-filter="all">
+                                All Rooms
+                            </button>
+
+                            <button
+                                class="filter-btn"
+                                data-filter="Available">
+                                Available
+                            </button>
+
+                            <button
+                                class="filter-btn"
+                                data-filter="Occupied">
+                                Occupied
+                            </button>
+
+                            <button
+                                class="filter-btn"
+                                data-filter="Maintenance">
+                                Maintenance
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ROOM CARDS LOAD HERE -->
+                    <div id="roomCards" class="room-grid">
+
+                        <p class="loading-message">
+                            Loading rooms...
+                        </p>
+
+                    </div>
+
+                    <p id="dashboardMessage" class="message"></p>
+
+                </section>
+
+
+                <footer class="footer">
+                    HostelPro · Hostel Management System
+                </footer>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
